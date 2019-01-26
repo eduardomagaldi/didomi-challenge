@@ -1,14 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GiveConsentComponent } from './pages/give-consent/give-consent.component';
 import { ConsentsComponent } from './pages/consents/consents.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
 	declarations: [
@@ -20,9 +24,13 @@ import { MatButtonModule } from '@angular/material/button';
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
-		NoopAnimationsModule,
+		BrowserAnimationsModule,
 		MatSidenavModule,
 		MatButtonModule,
+		MatInputModule,
+		MatCardModule,
+		MatCheckboxModule,
+		ReactiveFormsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
