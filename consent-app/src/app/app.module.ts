@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { GiveConsentComponent } from './pages/give-consent/give-consent.component';
 import { ConsentsComponent } from './pages/consents/consents.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
 	declarations: [
@@ -16,7 +19,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 	],
 	imports: [
 		BrowserModule,
-		AppRoutingModule
+		AppRoutingModule,
+		NoopAnimationsModule,
+		MatSidenavModule,
+		MatButtonModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
