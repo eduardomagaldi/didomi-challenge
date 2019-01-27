@@ -13,10 +13,18 @@
 
 	<p>I agree to:</p>
 
-	<mat-card>
-		<mat-checkbox formControlName="newsletter">Receive newsletter</mat-checkbox>
+	<mat-card formGroupName="consents">
+		<!-- <mat-checkbox formControlName="newsletter">Receive newsletter</mat-checkbox>
 		<mat-checkbox formControlName="ads">Be shown targeted ads</mat-checkbox>
 		<mat-checkbox formControlName="stats">Contribute to anonymous visit statistics</mat-checkbox>
+		<mat-error *ngIf="submitted && !isConsentGiven()">Please give at least one consent</mat-error> -->
+
+		<mat-checkbox
+			*ngFor="let consent of consentMap | keyvalue"
+			formControlName="{{consent.key}}"
+			>
+			{{consent.value}}
+		</mat-checkbox>
 		<mat-error *ngIf="submitted && !isConsentGiven()">Please give at least one consent</mat-error>
 	</mat-card>
 
@@ -28,7 +36,6 @@
 		[ngClass]="{
 			disabled: !isFormValid()
 		}"
-		(click)="onClick()"
 		>
 		Give consent
 	</button>

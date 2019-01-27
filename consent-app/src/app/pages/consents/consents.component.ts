@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsentService } from 'src/app/services/consent.service';
 
 @Component({
 	selector: 'app-consents',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsentsComponent implements OnInit {
 
-	constructor() { }
+	constructor(
+		private _consentService: ConsentService
+	) {
+	}
+
+	consentList: object[];
 
 	ngOnInit() {
+		this._consentService.getConsents().subscribe(consentList => {
+			console.log(consentList);
+			this.consentList = consentList;
+		})
 	}
 
 }
