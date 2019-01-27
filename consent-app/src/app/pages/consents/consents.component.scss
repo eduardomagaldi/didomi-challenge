@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th,
+    td {
+        border: 1px solid grey;
+        padding: 10px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+}
+
+.align-left {
+    text-align: left;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+}

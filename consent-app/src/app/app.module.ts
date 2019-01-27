@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
 	declarations: [
@@ -31,6 +32,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 		MatCardModule,
 		MatCheckboxModule,
 		ReactiveFormsModule,
+		MatTableModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

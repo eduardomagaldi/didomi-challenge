@@ -23,7 +23,7 @@ export class GiveConsentComponent implements OnInit {
 	ngOnInit() {
 		this.giveConsentForm = this._formBuilder.group({
 			name: ['', Validators.required],
-			email: ['', Validators.required],
+			email: ['', Validators.compose([Validators.required, Validators.email])],
 			consents: this._formBuilder.group({
 				newsletter: [false, Validators.required],
 				tAds: [false, Validators.required],

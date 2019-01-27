@@ -13,13 +13,36 @@ export class ConsentsComponent implements OnInit {
 	) {
 	}
 
-	consentList: object[];
+	public consentList: object[];
+	public itemsPerPage = 2;
+	public page = 0;
+	public numOfPages: number;
 
 	ngOnInit() {
 		this._consentService.getConsents().subscribe(consentList => {
-			console.log(consentList);
+			consentList.forEach((user) => {
+				user['consentArray'] = [];
+
+				for (const consent in user['consents']) {
+					if (user['consents'][consent]) {
+						user['consentArray'].push(this._consentService.consentMap[consent]);
+					}
+				}
+			});
+
+			this.numOfPages = Math.ceil(consentList.length / this.itemsPerPage);
+
 			this.consentList = consentList;
-		})
+		});
 	}
 
+	array(num: number) {
+		return Array(num);
+	}
+
+	goToPage(n: number) {
+		if (n >= 0 && n < this.numOfPages) {
+			this.page = n;
+		}
+	}
 }
